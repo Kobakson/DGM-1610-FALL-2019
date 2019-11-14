@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RotateCamera : MonoBehaviour
 {
-    public float rotatationSpeed = 1;
+    public float rotatationSpeed;
+    private float horizontalInput;
     void Start()
     {
         
@@ -12,7 +13,17 @@ public class RotateCamera : MonoBehaviour
 
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.up, horizontalInput * rotatationSpeed * Time.deltaTime);
+        
+        // horizontalInput = Input.GetAxis("Horizontal");
+        // transform.Rotate(Vector3.up, horizontalInput * rotatationSpeed * Time.deltaTime);
+        // if (Input.GetKey(Input.mousePosition))
+        {
+            // transform.Rotate(Vector3.up * rotatationSpeed * Time.deltaTime);
+        }
+        
+    }
+    voice OnMouseDrag
+    {
+        transform.Rotate(Vector3.up * rotatationSpeed * Time.deltaTime);
     }
 }
